@@ -27,9 +27,9 @@ class ProdClient:
         t = time.time()
         # Changed to allow big images
         options = [('grpc.max_message_length', max_message_size * 1024 * 1024),
-                  ('grpc.max_send_message_length', max_message_size * 1024 * 1024),
-                  ('grpc.max_receive_message_length', max_message_size * 1024 * 1024)
-                 ]
+                   ('grpc.max_send_message_length', max_message_size * 1024 * 1024),
+                   ('grpc.max_receive_message_length', max_message_size * 1024 * 1024)
+                  ]
 
         channel = grpc.insecure_channel(self.host, options=options)
         self.logger.debug('Establishing insecure channel took: {}'.format(time.time() - t))
